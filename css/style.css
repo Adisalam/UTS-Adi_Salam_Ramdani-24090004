@@ -1,0 +1,351 @@
+/* ======================================= */
+/* GLOBAL STYLES & FONT SETUP */
+/* ======================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Warna Utama */
+:root {
+    --primary-color: #5b3e9e; /* Ungu */
+    --secondary-color: #4a3282; /* Ungu gelap */
+    --light-bg: #f7f7f7;
+    --card-bg: white;
+    --border-color: #eee;
+}
+
+/* ======================================= */
+/* LAYOUT LOGIN (index.html) */
+/* ======================================= */
+.login-body {
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    width: 800px;
+    max-width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg);
+}
+
+.illustration-panel {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.form-panel {
+    flex: 1;
+    padding: 40px;
+}
+
+.form-panel h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+}
+
+.input-group i {
+    color: #888;
+    margin-right: 15px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px 0;
+    font-size: 1em;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    min-height: 1.2em;
+}
+
+/* ======================================= */
+/* PERBAIKAN STYLING LOGIN SOSIAL */
+/* ======================================= */
+
+/* Container untuk tombol sosial */
+.social-login {
+    /* Menggunakan Flexbox untuk menata tombol secara horizontal */
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Memberi jarak antar tombol */
+}
+
+/* Styling dasar untuk kedua tombol sosial */
+.social-button {
+    flex: 1; /* PENTING: Membuat kedua tombol memiliki lebar yang sama */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Mengikuti gaya form input */
+    background-color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500; /* Sedikit lebih tebal */
+    
+    /* Menggunakan Flexbox untuk menata ikon dan teks di dalam tombol */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Memposisikan konten di tengah */
+    transition: all 0.2s;
+}
+
+.social-button:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.social-button i {
+    /* Mengatur jarak antara ikon dan teks */
+    margin-right: 8px; 
+    font-size: 1.1em;
+}
+
+/* Warna Khusus untuk Google */
+.social-button.google { 
+    color: #4285F4; /* Biru Google */
+    border-color: #ddd;
+}
+
+/* Warna Khusus untuk Facebook */
+.social-button.facebook { 
+    color: #4267B2; /* Biru Facebook */
+    border-color: #ddd;
+}
+
+/* Media Query Login */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+    .illustration-panel {
+        display: none;
+    }
+}
+
+/* ======================================= */
+/* LAYOUT DASHBOARD & PRODUCTS */
+/* ======================================= */
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 80px;
+    background-color: var(--card-bg);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    padding-top: 20px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu-item {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.5em;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.menu-item.active {
+    color: var(--primary-color);
+    background-color: #f0f0f0;
+}
+
+.menu-item:hover {
+    color: var(--primary-color);
+}
+
+/* Konten Utama */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* SUMMARY CARDS (Dashboard) */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.card-icon {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card-label {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.card-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+.action-area button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.action-area button:hover {
+    background-color: var(--secondary-color);
+}
+
+.placeholder-box {
+    min-height: 250px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================================= */
+/* PRODUCTS LIST (products.html) */
+/* ======================================= */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.product-table th, .product-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #555;
+}
+
+.product-table tr:hover {
+    background-color: #fafafa;
+}
+
+.action-buttons button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.edit-btn {
+    background-color: #2196F3; /* Biru */
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336; /* Merah */
+    color: white;
+}
+
+/* Responsif untuk Dashboard/Products */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 60px;
+    }
+    .main-content {
+        padding: 20px 15px;
+    }
+    .header h1 {
+        font-size: 2em;
+    }
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+    .product-table th, .product-table td {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+}
