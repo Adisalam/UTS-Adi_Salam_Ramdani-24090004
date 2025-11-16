@@ -15,8 +15,10 @@ body {
 
 /* Warna Utama */
 :root {
-    --primary-color: #5b3e9e; /* Ungu */
-    --secondary-color: #4a3282; /* Ungu gelap */
+    --primary-color: #5b3e9e;
+    /* Ungu */
+    --secondary-color: #4a3282;
+    /* Ungu gelap */
     --light-bg: #f7f7f7;
     --card-bg: white;
     --border-color: #eee;
@@ -112,33 +114,57 @@ body {
     min-height: 1.2em;
 }
 
+/* Styling untuk Garis Pemisah "Or" */
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    /* Memberi jarak vertikal */
+}
+
+.separator hr {
+    flex-grow: 1;
+    /* Membuat garis memanjang memenuhi ruang */
+    border: none;
+    border-top: 1px solid #ddd;
+    /* Warna garis yang lembut */
+}
+
+.separator span {
+    padding: 0 15px;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
 /* ======================================= */
 /* PERBAIKAN STYLING LOGIN SOSIAL */
 /* ======================================= */
 
 /* Container untuk tombol sosial */
 .social-login {
-    /* Menggunakan Flexbox untuk menata tombol secara horizontal */
     display: flex;
     justify-content: space-between;
-    gap: 15px; /* Memberi jarak antar tombol */
+    gap: 15px;
+    /* Jarak antara tombol Google dan Facebook */
 }
 
 /* Styling dasar untuk kedua tombol sosial */
 .social-button {
-    flex: 1; /* PENTING: Membuat kedua tombol memiliki lebar yang sama */
+    flex: 1;
+    /* PENTING: Membuat kedua tombol memiliki lebar yang sama */
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 8px; /* Mengikuti gaya form input */
+    border-radius: 8px;
     background-color: white;
     cursor: pointer;
     font-size: 1em;
-    font-weight: 500; /* Sedikit lebih tebal */
-    
-    /* Menggunakan Flexbox untuk menata ikon dan teks di dalam tombol */
+    font-weight: 500;
+
+    /* Mengatur posisi ikon dan teks di tengah tombol */
     display: flex;
     align-items: center;
-    justify-content: center; /* Memposisikan konten di tengah */
+    justify-content: center;
     transition: all 0.2s;
 }
 
@@ -147,21 +173,27 @@ body {
 }
 
 .social-button i {
-    /* Mengatur jarak antara ikon dan teks */
-    margin-right: 8px; 
+    margin-right: 8px; /* Jarak antara ikon dan teks */
     font-size: 1.1em;
 }
 
 /* Warna Khusus untuk Google */
-.social-button.google { 
-    color: #4285F4; /* Biru Google */
+.social-button.google {
+    color: #4285F4;
+    /* Biru Google */
     border-color: #ddd;
 }
 
 /* Warna Khusus untuk Facebook */
-.social-button.facebook { 
-    color: #4267B2; /* Biru Facebook */
+.social-button.facebook {
+    color: #4267B2;
+    /* Biru Facebook */
     border-color: #ddd;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 25px;
 }
 
 /* Media Query Login */
@@ -169,6 +201,7 @@ body {
     .login-container {
         flex-direction: column;
     }
+
     .illustration-panel {
         display: none;
     }
@@ -291,7 +324,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     /* Desain terlihat memiliki padding di sekeliling tabel */
-    padding: 20px; 
+    padding: 20px;
 }
 
 .product-table {
@@ -299,17 +332,23 @@ body {
     border-collapse: collapse;
 }
 
-.product-table th, .product-table td {
-    padding: 15px; /* Tambah padding agar sesuai desain */
+.product-table th,
+.product-table td {
+    padding: 15px;
+    /* Tambah padding agar sesuai desain */
     text-align: left;
-    border-bottom: 1px solid var(--border-color); /* Garis pemisah antar baris */
+    border-bottom: 1px solid var(--border-color);
+    /* Garis pemisah antar baris */
 }
 
 .product-table th {
-    background-color: var(--card-bg); /* Header transparan */
+    background-color: var(--card-bg);
+    /* Header transparan */
     font-weight: bold;
-    color: #333; /* Warna teks header yang lebih gelap */
-    text-transform: none; /* Jangan capitalize */
+    color: #333;
+    /* Warna teks header yang lebih gelap */
+    text-transform: none;
+    /* Jangan capitalize */
     font-size: 1em;
 }
 
@@ -320,16 +359,19 @@ body {
 .action-icons i {
     font-size: 1.1em;
     cursor: pointer;
-    margin-right: 15px; /* Memberi jarak antar ikon */
+    margin-right: 15px;
+    /* Memberi jarak antar ikon */
     transition: color 0.2s;
 }
 
 .edit-btn {
-    color: #5b3e9e; /* Warna ungu untuk edit */
+    color: #5b3e9e;
+    /* Warna ungu untuk edit */
 }
 
 .delete-btn {
-    color: #f44336; /* Warna merah untuk delete */
+    color: #f44336;
+    /* Warna merah untuk delete */
 }
 
 .edit-btn:hover {
@@ -345,16 +387,21 @@ body {
     .sidebar {
         width: 60px;
     }
+
     .main-content {
         padding: 20px 15px;
     }
+
     .header h1 {
         font-size: 2em;
     }
+
     .summary-cards {
         grid-template-columns: 1fr;
     }
-    .product-table th, .product-table td {
+
+    .product-table th,
+    .product-table td {
         font-size: 0.9em;
         padding: 8px 10px;
     }

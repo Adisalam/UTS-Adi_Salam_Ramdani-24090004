@@ -71,9 +71,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // =======================================
     // Data Produk Sesuai Spesifikasi
     const products = [
-        { id: 1, name: "Kopi Gayo", price: 25000, stock: 50 },
-        { id: 2, name: "Teh Hitam", price: 18000, stock: 30 },
-        { id: 3, name: "Coklat Aceh", price: 30000, stock: 20 }
+        { id: 1, name: "Silver Queen", price: 25000, stock: 50 },
+        { id: 2, name: "Chitato", price: 18000, stock: 30 },
+        { id: 3, name: "Beng-beng", price: 12000, stock: 20 }
     ];
 
     // Fungsi untuk membuat format harga
