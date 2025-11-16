@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // =======================================
     // A. LOGIKA LOGIN (index.html)
     // =======================================
-    const CORRECT_USERNAME = "Adisalam";
+    const CORRECT_USERNAME = "adisalamramdani05@gmail.com";
     const CORRECT_PASSWORD = "24090004";
 
     const loginForm = document.getElementById('loginForm');
@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
         loginForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            const email = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
             const password = document.getElementById('password').value;
             const errorMessage = document.getElementById('errorMessage');
 
             // 1. Validasi Input Kosong
             if (email === '' || password === '') {
-                errorMessage.textContent = 'Username dan Password tidak boleh kosong.';
+                errorMessage.textContent = 'Email dan Password tidak boleh kosong.';
                 return;
             } else {
                 errorMessage.textContent = '';
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Login berhasil! Anda akan diarahkan ke Dashboard.');
                 window.location.href = 'dashboard.html';
             } else if (email !== CORRECT_USERNAME) {
-                // Kredensial SALAH: Username salah
-                errorMessage.textContent = 'Username invalid. Harap gunakan "Adisalam".';
+                // Kredensial SALAH: Email salah
+                errorMessage.textContent = 'Email invalid. Harap gunakan email yang sudah tertaut.';
             } else {
                 // Kredensial SALAH: Password salah
                 errorMessage.textContent = 'Password invalid. Harap periksa NIM Anda.';
