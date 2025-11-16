@@ -286,48 +286,58 @@ body {
 /* ======================================= */
 /* PRODUCTS LIST (products.html) */
 /* ======================================= */
+.product-list {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    /* Desain terlihat memiliki padding di sekeliling tabel */
+    padding: 20px; 
+}
+
 .product-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .product-table th, .product-table td {
-    padding: 12px 15px;
+    padding: 15px; /* Tambah padding agar sesuai desain */
     text-align: left;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color); /* Garis pemisah antar baris */
 }
 
 .product-table th {
-    background-color: #f0f0f0;
+    background-color: var(--card-bg); /* Header transparan */
     font-weight: bold;
-    color: #555;
+    color: #333; /* Warna teks header yang lebih gelap */
+    text-transform: none; /* Jangan capitalize */
+    font-size: 1em;
 }
 
 .product-table tr:hover {
     background-color: #fafafa;
 }
 
-.action-buttons button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 4px;
+.action-icons i {
+    font-size: 1.1em;
     cursor: pointer;
-    font-size: 0.9em;
+    margin-right: 15px; /* Memberi jarak antar ikon */
+    transition: color 0.2s;
 }
 
 .edit-btn {
-    background-color: #2196F3; /* Biru */
-    color: white;
+    color: #5b3e9e; /* Warna ungu untuk edit */
 }
 
 .delete-btn {
-    background-color: #f44336; /* Merah */
-    color: white;
+    color: #f44336; /* Warna merah untuk delete */
+}
+
+.edit-btn:hover {
+    color: #4a3282;
+}
+
+.delete-btn:hover {
+    color: #d32f2f;
 }
 
 /* Responsif untuk Dashboard/Products */

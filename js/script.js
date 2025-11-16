@@ -69,46 +69,77 @@ document.addEventListener('DOMContentLoaded', function () {
     // =======================================
     // C. LOGIKA PRODUCTS (products.html)
     // =======================================
-    const productList = [
-        { id: 1, name: 'Nasi Goreng Spesial', category: 'Makanan Berat', price: 25000, stock: 50 },
-        { id: 2, name: 'Es Teh Manis', category: 'Minuman', price: 5000, stock: 120 },
-        { id: 3, name: 'Roti Bakar Keju', category: 'Camilan', price: 18000, stock: 30 },
-        { id: 4, name: 'Mie Ayam Bakso', category: 'Makanan Berat', price: 22000, stock: 45 },
+    // Data Produk Sesuai Spesifikasi
+    const products = [
+        { id: 1, name: "Kopi Gayo", price: 25000, stock: 50 },
+        { id: 2, name: "Teh Hitam", price: 18000, stock: 30 },
+        { id: 3, name: "Coklat Aceh", price: 30000, stock: 20 }
     ];
+
+    // Fungsi untuk membuat format harga
+    function formatPrice(number) {
+        return number.toLocaleString('id-ID'); // Menggunakan format angka Indonesia tanpa simbol mata uang (sesuai gambar)
+    }
 
     function renderProductTable() {
         const tableBody = document.getElementById('productTableBody');
         if (!tableBody) return;
 
         tableBody.innerHTML = ''; // Kosongkan tabel
-        productList.forEach(product => {
+
+        // Menggunakan forEach untuk menampilkan data
+        products.forEach((product, index) => {
             const row = tableBody.insertRow();
 
-            // Kolom ID
-            row.insertCell().textContent = product.id;
+            // Kolom No (index + 1)
+            row.insertCell().textContent = index + 1;
 
-            // Kolom Nama Produk
+            // Kolom Product Name
             row.insertCell().textContent = product.name;
 
-            // Kolom Kategori
-            row.insertCell().textContent = product.category;
+            // Kolom Price
+            row.insertCell().textContent = formatPrice(product.price);
 
-            // Kolom Harga (Format Rupiah)
-            row.insertCell().textContent = formatRupiah(product.price);
-
-            // Kolom Stok
+            // Kolom Stock
             row.insertCell().textContent = product.stock;
 
-            // Kolom Aksi (Tombol)
+            // Kolom Aksi (Icons)
             const actionCell = row.insertCell();
-            actionCell.className = 'action-buttons';
+            actionCell.className = 'action-icons';
+            // Menggunakan ikon Font Awesome
             actionCell.innerHTML = `
-                <button class="edit-btn" data-id="${product.id}">Edit</button>
-                <button class="delete-btn" data-id="${product.id}">Hapus</button>
-            `;
+            <i class="fas fa-pencil-alt edit-btn" data-name="${product.name}"></i>
+            <i class="fas fa-trash-alt delete-btn"></i>
+        `;
+        });
+
+        // Panggil fungsi untuk melampirkan event listener setelah tabel dibuat
+        attachProductActionListeners();
+    }
+
+    function attachProductActionListeners() {
+        // Listener untuk Edit (menampilkan alert)
+        document.querySelectorAll('.edit-btn').forEach(icon => {
+            icon.addEventListener('click', function () {
+                const productName = this.getAttribute('data-name');
+                alert(`Edit produk ${productName}`);
+            });
+        });
+
+        // Listener untuk Delete (konfirmasi dan hapus baris)
+        document.querySelectorAll('.delete-btn').forEach(icon => {
+            icon.addEventListener('click', function () {
+                const rowToRemove = this.closest('tr');
+
+                if (confirm("Yakin hapus produk ini?")) {
+                    // Hapus baris dari DOM menggunakan remove()
+                    rowToRemove.remove();
+                    alert('Produk berhasil dihapus dari tabel.');
+                }
+            });
         });
     }
 
-    // Panggil logika produk
+    // Panggil fungsi rendering saat dokumen dimuat
     renderProductTable();
 });
