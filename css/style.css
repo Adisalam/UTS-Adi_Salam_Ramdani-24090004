@@ -28,37 +28,51 @@ body {
 /* LAYOUT LOGIN (index.html) */
 /* ======================================= */
 .login-body {
-    background-color: var(--light-bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
 }
 
 .login-container {
     display: flex;
-    width: 800px;
-    max-width: 90%;
-    border-radius: 10px;
+    /* PENTING: Mengambil 100% lebar dan tinggi viewport */
+    width: 100vw; 
+    height: 100vh;
+    max-width: none;
+    
+    /* Hilangkan radius dan shadow agar full edge-to-edge */
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: none; 
     background-color: var(--card-bg);
 }
 
 .illustration-panel {
     flex: 1;
-    background-color: var(--primary-color);
+    /* Ganti warna solid ungu dengan background-image di HTML/internal CSS */
+    background-color: var(--primary-color); 
+    
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 30px;
     text-align: center;
+    /* Tambahkan bayangan ke kanan untuk pemisah visual */
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-panel {
-    flex: 1;
-    padding: 40px;
+    flex: 1; /* Menggunakan sisa ruang */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Posisikan form di tengah vertikal */
+    padding: 40px 60px; /* Tambah padding horizontal */
+    max-width: 500px; /* Batasi lebar form agar tidak terlalu lebar */
+    margin: auto; /* Memastikan form berada di tengah form-panel */
 }
 
 .form-panel h2 {
@@ -200,10 +214,15 @@ body {
 @media (max-width: 768px) {
     .login-container {
         flex-direction: column;
+        height: auto;
     }
-
     .illustration-panel {
-        display: none;
+        /* PENTING: Beri tinggi agar konten terlihat di mobile */
+        height: 200px; 
+        box-shadow: none;
+    }
+    .form-panel {
+        padding: 30px 20px;
     }
 }
 
