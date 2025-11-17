@@ -16,9 +16,7 @@ body {
 /* Warna Utama */
 :root {
     --primary-color: #5b3e9e;
-    /* Ungu */
     --secondary-color: #4a3282;
-    /* Ungu gelap */
     --light-bg: #f7f7f7;
     --card-bg: white;
     --border-color: #eee;
@@ -37,12 +35,9 @@ body {
 
 .login-container {
     display: flex;
-    /* PENTING: Mengambil 100% lebar dan tinggi viewport */
     width: 100vw; 
     height: 100vh;
     max-width: none;
-    
-    /* Hilangkan radius dan shadow agar full edge-to-edge */
     border-radius: 0;
     overflow: hidden;
     box-shadow: none; 
@@ -51,7 +46,6 @@ body {
 
 .illustration-panel {
     flex: 1;
-    /* Ganti warna solid ungu dengan background-image di HTML/internal CSS */
     background-color: var(--primary-color); 
     
     color: white;
@@ -61,18 +55,17 @@ body {
     align-items: center;
     padding: 30px;
     text-align: center;
-    /* Tambahkan bayangan ke kanan untuk pemisah visual */
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-panel {
-    flex: 1; /* Menggunakan sisa ruang */
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Posisikan form di tengah vertikal */
-    padding: 40px 60px; /* Tambah padding horizontal */
-    max-width: 500px; /* Batasi lebar form agar tidak terlalu lebar */
-    margin: auto; /* Memastikan form berada di tengah form-panel */
+    justify-content: center; 
+    padding: 40px 60px;
+    max-width: 500px; 
+    margin: auto; 
 }
 
 .form-panel h2 {
@@ -128,21 +121,17 @@ body {
     min-height: 1.2em;
 }
 
-/* Styling untuk Garis Pemisah "Or" */
 .separator {
     display: flex;
     align-items: center;
     text-align: center;
     margin: 20px 0;
-    /* Memberi jarak vertikal */
 }
 
 .separator hr {
     flex-grow: 1;
-    /* Membuat garis memanjang memenuhi ruang */
     border: none;
     border-top: 1px solid #ddd;
-    /* Warna garis yang lembut */
 }
 
 .separator span {
@@ -155,18 +144,14 @@ body {
 /* PERBAIKAN STYLING LOGIN SOSIAL */
 /* ======================================= */
 
-/* Container untuk tombol sosial */
 .social-login {
     display: flex;
     justify-content: space-between;
     gap: 15px;
-    /* Jarak antara tombol Google dan Facebook */
 }
 
-/* Styling dasar untuk kedua tombol sosial */
 .social-button {
     flex: 1;
-    /* PENTING: Membuat kedua tombol memiliki lebar yang sama */
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -175,7 +160,6 @@ body {
     font-size: 1em;
     font-weight: 500;
 
-    /* Mengatur posisi ikon dan teks di tengah tombol */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,21 +171,17 @@ body {
 }
 
 .social-button i {
-    margin-right: 8px; /* Jarak antara ikon dan teks */
+    margin-right: 8px; 
     font-size: 1.1em;
 }
 
-/* Warna Khusus untuk Google */
 .social-button.google {
     color: #4285F4;
-    /* Biru Google */
     border-color: #ddd;
 }
 
-/* Warna Khusus untuk Facebook */
 .social-button.facebook {
     color: #4267B2;
-    /* Biru Facebook */
     border-color: #ddd;
 }
 
@@ -217,7 +197,6 @@ body {
         height: auto;
     }
     .illustration-panel {
-        /* PENTING: Beri tinggi agar konten terlihat di mobile */
         height: 200px; 
         box-shadow: none;
     }
@@ -235,7 +214,6 @@ body {
     min-height: 100vh;
 }
 
-/* Sidebar Styling */
 .sidebar {
     width: 80px;
     background-color: var(--card-bg);
@@ -265,7 +243,6 @@ body {
     color: var(--primary-color);
 }
 
-/* Konten Utama */
 .main-content {
     flex-grow: 1;
     padding: 30px;
@@ -277,7 +254,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* SUMMARY CARDS (Dashboard) */
 .summary-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -342,7 +318,6 @@ body {
     background-color: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    /* Desain terlihat memiliki padding di sekeliling tabel */
     padding: 20px;
 }
 
@@ -354,20 +329,15 @@ body {
 .product-table th,
 .product-table td {
     padding: 15px;
-    /* Tambah padding agar sesuai desain */
     text-align: left;
     border-bottom: 1px solid var(--border-color);
-    /* Garis pemisah antar baris */
 }
 
 .product-table th {
     background-color: var(--card-bg);
-    /* Header transparan */
     font-weight: bold;
     color: #333;
-    /* Warna teks header yang lebih gelap */
     text-transform: none;
-    /* Jangan capitalize */
     font-size: 1em;
 }
 
@@ -379,18 +349,15 @@ body {
     font-size: 1.1em;
     cursor: pointer;
     margin-right: 15px;
-    /* Memberi jarak antar ikon */
     transition: color 0.2s;
 }
 
 .edit-btn {
     color: #5b3e9e;
-    /* Warna ungu untuk edit */
 }
 
 .delete-btn {
     color: #f44336;
-    /* Warna merah untuk delete */
 }
 
 .edit-btn:hover {
